@@ -23,6 +23,6 @@ function cuerpo()
 ?>
     <br><br>
     Hola, estás en Index.php
-    primer cambio
+    primer cambio segundo cambio
 <?php
 }
