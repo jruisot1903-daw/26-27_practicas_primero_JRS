@@ -5,7 +5,7 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("2DAW APLICACION");
+inicioCuerpo("Pruebas");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -17,6 +17,7 @@ function cuerpo()
 {
 ?>
     <br><br>
-    <a href="./basicas.php">Funcionamiento básico</a>
+    <a href="./basicas.php">Funcionamiento básico</a><br>
+    <a href="./pasopar.php">Pasar Parametros</a>
 <?php
 }
