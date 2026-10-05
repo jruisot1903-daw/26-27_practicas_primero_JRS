@@ -23,7 +23,7 @@ $barraUbi = [
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relación 1 ");
+inicioCuerpo("Relación 1 ", $barraUbi);
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************

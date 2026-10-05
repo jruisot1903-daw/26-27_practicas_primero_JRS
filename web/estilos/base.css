@@ -14,19 +14,17 @@ body {
 }
 
 #barraUbicacion{
-    background-color: #c7d2fe;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #barraUbicacion a:link,#barraUbicacion a:visited{
     text-decoration: none;
-    background-color: #c7d2fe;
-    color: white;
+    color: black;
 }
 
 #barraUbicacion a:hover{
-    background-color: white;
-    color: #c7d2fe;
+    background-color: rgb(202, 202, 202);
+    color: black;
 }
 
 

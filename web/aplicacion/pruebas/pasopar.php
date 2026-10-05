@@ -1,6 +1,27 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+/**
+ * Cada elemento es un array de dos posiciones asociativas
+ * TEXTO : texto a mostrar en el elemento
+ * LINK: Enlace a la pagina
+ */
+
+$barraUbi = [
+    [
+        "TEXTO" => "Inicio",
+        "LINK" => "/index.php"
+    ],
+    [
+        "TEXTO" => "Pruebas",
+        "LINK" => "/aplicacion/pruebas/index.php"
+    ],
+    [
+        "TEXTO" => "Pasopar",
+        "LINK" => "/aplicacion/pruebas/pasopar.php"
+    ]
+];
+
 
 //datos basicos
 $nombre = "Javier";
@@ -21,7 +42,7 @@ $otras = rellenoOtras();
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Paso Parametros");
+inicioCuerpo("Paso Parametros", $barraUbi);
 cuerpo($basicos,$otras); //llamo a la vista
 finCuerpo();
 // **********************************************************

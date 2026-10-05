@@ -49,7 +49,7 @@ function finCabecera()
 }
 
 
-function inicioCuerpo($cabecera, array $barraUbi=[])
+function inicioCuerpo(string $cabecera, array $barraUbi=[])
 {
      global $acceso;
     
@@ -66,9 +66,7 @@ function inicioCuerpo($cabecera, array $barraUbi=[])
                 
             </div>
             <div id="barraMenu">
-                <ul>
-                    <a href="/index.php">Inicio</a>
-                 </ul> 
+                
                 
             </div>
             <div id="barraUbicacion"><?php
