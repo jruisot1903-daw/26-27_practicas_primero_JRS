@@ -58,20 +58,6 @@ $array3 = [
     34
 ]; // añadiendole el valor al array con una sola sentencia con []
 
-function mostrarArray($arr, $nombre)
-{ // le he implementado que a la funcion le pasemos el nombre en este caso es el titutlo de cada array de como esta hecho
-    echo "<h3>$nombre</h3>";
-    foreach ($arr as $clave => $valor) {
-        if (is_array($valor)) { // is_array lo utilizamos para cada dato del array comprobar si es un dato cualquiera o si es otro array
-            echo "$clave => [ " . implode(", ", $valor) . " ]<br>";
-            // utilizamos implode para pasar el array en una cadena de texto y le ponemos el separador de sus elementos en este caso una ,
-        } else {
-            echo "$clave => $valor<br>";
-        }
-    }
-}
-
-
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
@@ -89,4 +75,17 @@ function cuerpo($ar1, $ar2, $ar3)
     mostrarArray($ar1, "Array1 (varias sentencias)");
     mostrarArray($ar2, "Array2 (array())");
     mostrarArray($ar3, "Array3 ([])");
+}
+
+function mostrarArray($arr, $nombre)
+{ // le he implementado que a la funcion le pasemos el nombre en este caso es el titutlo de cada array de como esta hecho
+    echo "<h3>$nombre</h3>";
+    foreach ($arr as $clave => $valor) {
+        if (is_array($valor)) { // is_array lo utilizamos para cada dato del array comprobar si es un dato cualquiera o si es otro array
+            echo "$clave => [ " . implode(", ", $valor) . " ]<br>";
+            // utilizamos implode para pasar el array en una cadena de texto y le ponemos el separador de sus elementos en este caso una ,
+        } else {
+            echo "$clave => $valor<br>";
+        }
+    }
 }

@@ -37,7 +37,7 @@ function cabecera() {}
 //vista
 function cuerpo()
 {
-
+    
       $fecha = new DateTime();
 
     echo "<h3>Fecha Actual formato 'd/m/Y'</h3>";
