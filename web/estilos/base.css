@@ -1,93 +1,253 @@
-@charset "UTF8";
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'BO2';
+  src: url('./black-ops-2-cdnfonts/blops.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  /* El descriptor size-adjust escala ligeramente la fuente original para que 
+     al saltar a la fuente de respaldo (tildes) no se note el cambio de tamaño */
+  size-adjust: 105%; 
+}
 
 body {
-    background-color: cyan;
-    font-size: 16px;
+  margin: 0;
+  padding: 30px 15px;
+  background-image: url(../imagenes/descarga.jpg);
+  background-repeat: no-repeat;
+  background-color: #000000;
+  /* background: radial-gradient(circle, #1a1c1e 0%, #0d0e10 100%); */
+  /* Interfaz limpia estilo menús reales de Call of Duty */
+  font-family: 'Segoe UI', Impact, Arial, sans-serif;
+  font-size: 18px;
+  color: #d1d5db;
+  line-height: 1.5;
 }
 
-#documento{
-    margin: 0 auto;
-    background-color: #8080ff;
-    width: 700px;
-}
-#cabecera{
-    background-color: #14e737;
-    padding: 5px;
-}
-#cabecera #logo{
-    width: 75px;
-    height: 50px;
+title{
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  color: #ff5500;
+  font-weight: bold;
 }
 
-#cabecera #titulo{
-    font-size: 1.3em;
-    font-style: italic;
+#barraUbicacion {
+  /* Apuntamos primero a BO2. Si hay tildes, saltará a Impact y Arial Black manteniendo el bloque militar */
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 1.5px;
 }
 
-.boton{
-    background-color: blue;
-    color:white;
-    border:thin black solid;
+#barraUbicacion a:link,
+#barraUbicacion a:visited {
+  text-decoration: none;
+  color: #ff5500;
+  font-weight: bold;
 }
 
-.boton a{
-    text-decoration: none;
-    color:white;
+#barraUbicacion a:hover {
+  background-color: rgba(255, 85, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
 }
 
-.boton a:visited{
-    text-decoration: none;
-    color:white;
+#documento {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #121417;
+  border: 2px solid #2a2f35;
+  border-radius: 10px; 
+  overflow: hidden;
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.85),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-.boton a:hover{
-    background-color:cyan;
-    color: black;
+#cabecera {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(135deg, #1c1f24 70%, #ff5500 100%);
+  color: #ffffff;
+  padding: 20px;
+  border-bottom: 3px solid #ff5500;
+  position: relative;
 }
 
-.boton:hover{
-    background-color:cyan;
-    color: black;
+#cabecera::after {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-family: 'BO2', Impact, sans-serif;
+  font-size: 0.55em;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
 }
 
-.tabla{
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
-    background-color: white;
+#cabecera #logo {
+  width: 75px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 0px;
+  border: 1px solid #ff5500;
+  filter: grayscale(30%) contrast(120%);
 }
 
-.tabla th{
-    background-color: teal;
-    color: blue;
-}
-.tabla tr.par{
-    background-color: black;
-    color: white;
-    
-}
-
-.tabla tr.impar{
-    
+#cabecera #titulo {
+  margin: 0;
+  /* Combinación híbrida perfecta para títulos con tildes o caracteres en español */
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  font-size: 2.1em; 
+  font-weight: normal; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 85, 0, 0.6);
 }
 
-#pie{
-    background-color: #81e714;
-    color: blue;
-    font-size: 1.5 em;
-    padding: 5px;
+.boton {
+  display: inline-block;
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  font-size: 0.85em;
+  background-color: #1f2326;
+  color: #ff5500;
+  border: 1px solid #ff5500;
+  border-radius: 0px;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.15s ease-in-out;
 }
 
-.for_texto{
-    border:blue thin solid;
-    background-color: white;
-    padding: 2px;
-    margin:2px;
-    border-radius: 4px;
+.boton a {
+  text-decoration: none;
+  color: #ff5500;
 }
-.error{
-    background-color: white;
-    color:red;
-    border:thin solid red;
-    padding:5px;
+
+a {
+  text-decoration: none;
+  color: #ff5500;
+}
+
+a:hover{
+  color: #b63d00;
+}
+
+a:visited{
+    color: #b63d00;
+}
+
+.boton a:visited {
+  color: #ff5500;
+}
+
+.boton:hover {
+  background-color: #ff5500;
+  color: #000000;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 85, 0, 0.7);
+}
+
+.boton a:hover {
+  color: #000000;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #15181c;
+  overflow: hidden;
+  border: 1px solid #2a2f35;
+}
+
+.tabla th {
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  background-color: #1c1f24;
+  color: #00d2ff; /* Azul HUD cibernético de BO2 */
+  padding: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #00d2ff;
+}
+
+.tabla td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #22262b;
+  /* Monospace completo para números y datos para que queden alineados */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+.tabla tr.par {
+  background-color: #181b20;
+  color: #d1d5db;
+}
+
+.tabla tr.impar {
+  background-color: #131518;
+  color: #d1d5db;
+}
+
+.tabla tr:hover {
+  background-color: rgba(0, 210, 255, 0.1); 
+  color: #ffffff;
+  transition: background-color 0.1s ease;
+}
+
+#pie {
+  font-family: 'BO2', Impact, sans-serif;
+  background-color: #0d0e10;
+  color: #4b5563;
+  font-size: 0.75em;
+  padding: 15px;
+  text-align: center;
+  border-top: 2px solid #2a2f35;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.for_texto {
+  width: 100%;
+  border: 1px solid #374151;
+  background-color: #181b20;
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 0px;
+  outline: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.for_texto:focus {
+  border-color: #00d2ff;
+  background-color: #1c2127;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+}
+
+.error {
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  font-size: 0.85em;
+  background-color: rgba(220, 38, 38, 0.15);
+  color: #ef4444; 
+  border: 2px solid #ef4444;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 0px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
 }

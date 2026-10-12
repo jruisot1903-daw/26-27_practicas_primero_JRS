@@ -48,9 +48,11 @@ function finCabecera()
 <?php   
 }
 
-function inicioCuerpo($cabecera)
+
+function inicioCuerpo(string $cabecera, array $barraUbi=[])
 {
-    global $acceso;
+     global $acceso;
+    
 
 ?>
     <body>
@@ -60,18 +62,35 @@ function inicioCuerpo($cabecera)
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
             </header>
             
-            <div id="barraLogin">
+            <div id="barraLogin">   
                 
             </div>
             <div id="barraMenu">
-                <ul>
-                    <li><a href="/index.php">Inicio</a></li>
-                 </ul> 
+                
                 
             </div>
-            
+            <div id="barraUbicacion"><?php
+            if($barraUbi){
+                foreach($barraUbi as $elemento){
+                    if(isset($elemento["LINK"]) && isset($elemento["LINK"])){
+                        echo " <a href =\"{$elemento["LINK"]}\" >";
+
+                        echo $elemento["TEXTO"];
+
+                        if($elemento["LINK"])
+                            echo " </a>";
+                        echo " >> ";
+                    }
+                }
+            }
+        ?>
+            </div>
             <div>
 <?php   
+}
+
+function barraUbicacion($barraUbi){
+
 }
 
 function finCuerpo()
