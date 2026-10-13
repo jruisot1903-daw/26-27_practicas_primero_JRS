@@ -35,6 +35,7 @@ function cuerpo()
 {
 ?>
     <br><br>
+    <h1>Arrays y Fechas</h1><br>
     <a href="./ejercicio1.php">Ejercicio1</a><br><br>
     <a href="./ejercicio2.php">Ejercicio2</a><br><br>
     <a href="./ejercicio3.php">Ejercicio3</a><br><br>

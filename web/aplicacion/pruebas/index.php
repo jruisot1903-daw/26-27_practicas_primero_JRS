@@ -36,6 +36,7 @@ function cuerpo()
 ?>
     <br><br>
     <a href="./basicas.php">Funcionamiento básico</a><br>
-    <a href="./pasopar.php">Pasar Parametros</a>
+    <a href="./pasopar.php">Pasar Parametros</a><br>
+    <a href="./string.php">String</a>
 <?php
 }
