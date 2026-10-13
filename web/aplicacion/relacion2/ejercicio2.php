@@ -23,6 +23,9 @@ $barraUbi = [
     ]
 ];
 
+$cadena = "Está la niña en casa";
+
+
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();

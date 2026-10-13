@@ -47,9 +47,9 @@ function cuerpo($texto, $nombre)
 <?php
 
 $texto = <<<fin
-Mi querida amiga <br />
-escribo estas líneas esperando que me leas. <br/>
-Firmado: $nombre<br/>
+Hola $nombre <br>
+Caracteres especiales: á é í ó ú ñ \" ' <br>
+Etiqueta HTML: &lt;h2&gt;Título&lt;/h2&gt;<br>
 fin;
 
 echo $texto;
@@ -57,9 +57,9 @@ echo $texto;
 echo "<h1>Texto con NOWDOC</h1>";
 
 $texto=<<<'fin'
-Mi querida amiga <br />
-escribo estas líneas esperando que me leas. <br />
-Firmado: $nombre <br />
+Hola $nombre <br>
+Caracteres especiales: á é í ó ú ñ " \' <br>
+Etiqueta HTML: &lt;h2&gt;Título&lt;/h2&gt;<br>
 fin;
 
 echo $texto;
