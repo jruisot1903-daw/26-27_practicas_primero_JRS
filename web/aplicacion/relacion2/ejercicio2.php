@@ -31,17 +31,17 @@ inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion 2 - Ejercicio 2 ", $barraUbi);
-cuerpo(); //llamo a la vista
+cuerpo($cadena); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
 //vista
 function cabecera() {}
 //vista
-function cuerpo()
+function cuerpo($cadena)
 {
 ?>
-    <br><br>
+    
    
 <?php
 }
