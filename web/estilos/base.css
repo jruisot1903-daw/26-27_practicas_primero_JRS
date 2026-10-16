@@ -81,6 +81,11 @@ title{
   position: relative;
 }
 
+#mp{
+  width: 100px;
+  height: 100px;
+}
+
 #cabecera::after {
   position: absolute;
   right: 15px;

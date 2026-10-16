@@ -60,6 +60,9 @@ function inicioCuerpo(string $cabecera, array $barraUbi=[])
         
             <header>
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
+                <a href="../../index.php">
+                    <img src="../../imagenes/ImagenRetorno.png" id="mp" alt="">
+                </a>
             </header>
             
             <div id="barraLogin">   
