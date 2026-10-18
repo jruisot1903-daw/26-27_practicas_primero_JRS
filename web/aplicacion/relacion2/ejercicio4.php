@@ -55,6 +55,7 @@ function cuerpo($num1,$num2,$text)
     <?php 
         $text =  str_pad($num2,15,' ',STR_PAD_RIGHT);
         echo str_replace(' ', '&nbsp;', $text);
+    // reemplazamos los  espacios por &nbsp; para que se vean en el navegador
     ?>
 </div>
 
