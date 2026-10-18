@@ -23,7 +23,7 @@ $barraUbi = [
     ]
 ];
 
-// HEREDOC
+// Creamos las variables que vamos a utilizar en la vista
 $nombre = "Javier";
 $texto = " ";
 
@@ -46,6 +46,8 @@ function cuerpo($texto, $nombre)
    <h1>Texto con HEREDOC</h1>
 <?php
 
+// lo creamos con HEREDOC
+// es como un string pero le podemos pasar las varibles sin tener que escapar las comillas 
 $texto = <<<fin
 Hola $nombre <br>
 Caracteres especiales: á é í ó ú ñ \" ' <br>
@@ -56,6 +58,8 @@ echo $texto;
 
 echo "<h1>Texto con NOWDOC</h1>";
 
+// Lo creamos con NOWDOC
+// en este caso no se interpretan las variables ni los caractres especiales, se muestra tal cual lo escribimos
 $texto=<<<'fin'
 Hola $nombre <br>
 Caracteres especiales: á é í ó ú ñ " \' <br>
