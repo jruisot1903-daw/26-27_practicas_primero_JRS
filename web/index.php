@@ -20,9 +20,5 @@ function cuerpo()
 ?>
     <br><br>
     <a href="./aplicacion/pruebas/index.php">Pruebas</a>
-    <br>
-    <a href="./aplicacion/relacion1/index.php">Relacion 1</a>
-    <br>
-    <a href="./aplicacion/relacion2/index.php">Relacion 2</a>
 <?php
 }

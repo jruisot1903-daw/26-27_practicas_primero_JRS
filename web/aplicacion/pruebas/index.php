@@ -1,29 +1,25 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-/**
- * Cada elemento es un array de dos posiciones asociativas
- * TEXTO : texto a mostrar en el elemento
- * LINK: Enlace a la pagina
- */
 
-$barraUbi = [
-    [
-        "TEXTO" => "Inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ]
+$barra=[
+     [
+       "TEXTO"=> "inicio",
+       "ENLACE" =>"/index.php",
+     ],
+       [ 
+       "TEXTO"=> "pruebas"   
+     ],  
 ];
+
+
 
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Pruebas",$barraUbi);
+inicioCuerpo("2DAW APLICACION", $barra);
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -35,8 +31,13 @@ function cuerpo()
 {
 ?>
     <br><br>
-    <a href="./basicas.php">Funcionamiento básico</a><br>
-    <a href="./pasopar.php">Pasar Parametros</a><br>
-    <a href="./string.php">String</a>
+    Elemento de pruebas
+    <br><br>
+    <a href="basicas.php">Funcionamiento básico</a><br>
+    <a href="pasopar.php">Comunicacion controlador-vista</a><br>
+    <a href="array.php">Array</a><br>
+    <a href="cadenas.php">Cadenas</a><br>
+    <a href="expresiones_regulares.php">Expresiones regulares</a><br>
+    <a href="index_funciones.php">funciones</a><br>
 <?php
 }

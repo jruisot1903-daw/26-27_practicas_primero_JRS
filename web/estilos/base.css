@@ -34,8 +34,8 @@ title{
   font-weight: bold;
 }
 
-#barraUbicacion {
-  /* Apuntamos primero a BO2. Si hay tildes, saltará a Impact y Arial Black manteniendo el bloque militar */
+/* #barraUbicacion {
+   Apuntamos primero a BO2. Si hay tildes, saltará a Impact y Arial Black manteniendo el bloque militar 
   font-family: 'BO2', Impact, 'Arial Black', sans-serif;
   color: #9ca3af;
   text-transform: uppercase;
@@ -54,6 +54,129 @@ title{
   background-color: rgba(255, 85, 0, 0.2);
   color: #ffffff;
   box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
+} */
+
+/* --- BARRA UBICACIÓN: DISEÑO TÁCTICO MINIMALISTA --- */
+#barraUbicacion {
+  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 2px;
+  
+  padding: 10px 0;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  
+  /* Una línea gris muy fina abajo por defecto */
+  border-bottom: 1px solid #2a2f35;
+  transition: border-color 0.25s ease;
+}
+
+/* Cambia sutilmente el borde inferior al pasar el ratón por la barra */
+#barraUbicacion:hover {
+  border-color: #4b5563;
+}
+
+/* --- ENLACES EN LA BARRA --- */
+#barraUbicacion a:link,
+#barraUbicacion a:visited {
+  text-decoration: none;
+  color: #9ca3af;
+  padding: 2px 8px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Efecto al pasar por encima del enlace */
+#barraUbicacion a:hover {
+  color: #ffffff; /* El texto se ilumina en blanco */
+  background-color: rgba(255, 85, 0, 0.1); /* Fondo naranja muy sutil */
+}
+
+/* Un pequeño punto indicador debajo del enlace activo/hover */
+#barraUbicacion a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: #ff5500;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#barraUbicacion a:hover::after {
+  opacity: 1; /* El punto aparece justo debajo de la palabra al apuntarla */
+}
+
+
+
+#barraMenu {
+    display: flex;          
+    list-style: none;       
+    margin: 10px;      
+    padding: 1px;             
+    gap: 5px;              
+    background: rgba(18, 20, 23, 0.9);
+    font-size: small;
+}
+
+#barraMenu li{
+  border-left: 4px solid #ff5500;
+}
+
+#barraMenu li {
+    position: relative;
+}
+
+#barraMenu a {
+    display: inline-block;
+    text-decoration: none;  
+    color: #9ca3af;         
+    font-family: 'BO2', Impact, 'Arial Black', sans-serif; 
+    font-size: 0.9em;       
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+    transition: all 0.15s ease-in-out;
+}
+
+/* --- EFECTO SELECCIÓN DE ARMA / MENÚ BO2 --- */
+#barraMenu a:hover {
+    color: #ffffff;         
+    text-shadow: 0 0 8px rgba(255, 85, 0, 0.8); 
+    transform: scale(1.03) translateX(2px);
+}
+
+/* Línea sutil que se expande por debajo al pasar el cursor */
+#barraMenu li::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 12px;
+    width: 0;
+    height: 2px;
+    background-color: #ff5500;
+    box-shadow: 0 0 8px #ff5500;
+    transition: width 0.15s ease-in-out;
+}
+
+#barraMenu li:hover::after {
+    width: calc(100% - 24px);
+}
+
+/* Reseteo para evitar que los enlaces visitados te rompan el naranja */
+#barraMenu a:visited {
+    color: #9ca3af;
+}
+#barraMenu a:hover:visited {
+    color: #ffffff;
 }
 
 #documento {
@@ -70,10 +193,19 @@ title{
     inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-#cabecera {
+
+header{
+  padding: 15px 25px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#cabecera {
+  display: flex;         
+  align-items: center;   
+  gap: 20px;             
   background: linear-gradient(135deg, #1c1f24 70%, #ff5500 100%);
   color: #ffffff;
   padding: 20px;
@@ -255,4 +387,53 @@ a:visited{
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+
+/* --- KILLFEED INYECTADA POR CSS PURO (SIN TOCAR HTML) --- */
+
+body::before {
+  white-space: pre; 
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2.2;
+  text-align: right;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  pointer-events: none;
+  background-color: rgba(11, 13, 15, 0.75);
+  padding: 10px 15px;
+  border-right: 4px solid #ff5500;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  content: "";
+  animation: killfeedInyectada 16s infinite steps(1);
+}
+
+/* --- ANIMACIÓN EN BUCLE CON LAS BAJAS DE LA PARTIDA --- */
+@keyframes killfeedInyectada {
+  /* Baja 1 */
+  0%, 24% {
+    content: "xX_Annihilator_Xx [AN-94] ToxicPlayer_99";
+    color: #ff5500; 
+  }
+  /* Baja 2 */
+  25%, 49% {
+    content: "Alfa_Sniper [DSR-50] CamperHunter\A xX_Annihilator_Xx [SCAR-H] ToxicPlayer_99";
+    color: #ff5500;
+  }
+  /* Baja 3 */
+  50%, 74% {
+    content: "ToxicPlayer_99 [MSMC] xX_Annihilator_Xx\A Alfa_Sniper [DSR-50] CamperHunter";
+    color: #ff5500;
+  }
+  /* Baja 4 */
+  75%, 100% {
+    content: "Ghost_BO2 [KNIFE] NoobMaster7\A ToxicPlayer_99 [MSMC] xX_Annihilator_Xx";
+    color: #ff5500;
+  }
 }

@@ -1,64 +1,56 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-/**
- * Cada elemento es un array de dos posiciones asociativas
- * TEXTO : texto a mostrar en el elemento
- * LINK: Enlace a la pagina
- */
-
-$barraUbi = [
-    [
-        "TEXTO" => "Inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ],
-    [
-        "TEXTO" => "Pasopar",
-        "LINK" => "/aplicacion/pruebas/pasopar.php"
-    ]
-];
-
 
 //datos basicos
-$nombre = "Javier";
-$edad = 22;
-
+$nombre="Vicente";
+$edad=30;
 
 $basicos=[
-    "nombre" => $nombre,
-    "edad" => $edad
+    "nombre"=>$nombre,
+    "edad"=>$edad
 ];
-// relleno otras
 
-$otras = rellenoOtras();
+//relleno otras
+$otras=rellenarOtras();
 
 
 
 //dibuja la plantilla de la vista
-inicioCabecera("APLICACION PRIMER TRIMESTRE");
+inicioCabecera("Mi aplicacion");
 cabecera();
 finCabecera();
-inicioCuerpo("Paso Parametros", $barraUbi);
-cuerpo($basicos,$otras); //llamo a la vista
+inicioCuerpo("PASO PARAMETROs");
+cuerpo($basicos, $otras);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
 //vista
-function cabecera() {}
+function cabecera() 
+{
+    ?>
+    <!-- esto va en el head -->
+     <?php   
+
+
+
+}
+
 //vista
 function cuerpo($bas, $ot)
 {
+?>
+    <br><br>
+
+<?php
+
 
     echo "Mi nombre es {$bas["nombre"]} de {$bas["edad"]} años".PHP_EOL;
-    echo "Con otros datos {$ot}".PHP_EOL;
-?>
-<?php
+    "Con otros datos {$ot}";
+
 }
 
-function rellenoOtras(){
-    return "de 2 Daw";
+
+function rellenarOtras(){
+    return "de 2 DAW";
 }
