@@ -38,6 +38,16 @@ if (!$numero=doble($numero))
     }
 
 
+$numero=variosParametros(25,"2aaa8769",56);
+
+$numero=variosParametros(25,"2");
+
+$numero=variosParametros(25,par3:100);
+
+
+
+
+
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
