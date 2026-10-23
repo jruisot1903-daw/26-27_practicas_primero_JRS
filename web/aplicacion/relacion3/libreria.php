@@ -113,7 +113,7 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
      * @param integer $num
      * @param integer $num2
      * @param integer $num3
-     * @return void
+     * 
      */
     function devuelve(&$num, $num2 = 1, $num3 = 10)
     {
@@ -123,7 +123,14 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
     }
 
     //Ejercicio5
-
+    /**
+     * Funcion Suma , Resta y Multiplicación
+     * Piden dos numeros y hacen la operacion correspondiente
+     *
+     * @param integer $a
+     * @param integer $b
+     * 
+     */
     function suma($a, $b)
     {
         return $a + $b;
@@ -131,7 +138,12 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
 
     function resta($a, $b)
     {
-        return $a - $b;
+        if ($a < $b){ // le hacemos esta comprobación para que no nos den numero negativos
+            return $b - $a;
+        }else{
+            return $a - $b;
+        }
+        
     }
 
     function multiplicacion($a, $b)
@@ -139,10 +151,25 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
         return $a * $b;
     }
 
-    // Función principal que usa una variable-función
+    /**
+     * Función hacer Operación
+     * Datos a pasarle : <br>
+     * 1º Le tenemos que pasar un string con el nombre de la operacion que queremos hacer , Ej: suma<br>
+     * 2º Tenemos que pasarle el primer digito con que el que queramos operar<br>
+     * 3º Tenemos que pasarle el segundo digito con el que queramos operar<br>
+     * 4º Nos devuelve el resultado de la operación<br>
+     * 5º Si nos devuelve false es porque hemos escrito mal el nombre de la operacion<br>
+     *
+     * @param string $operacion
+     * @param integer $num1
+     * @param integer $num2
+     * 
+     */
     function hacerOperacion($operacion, $num1, $num2)
     {
-        // Comprobamos si la operación es válida
+// Comprobamos si la operación es válida y ponemos que el nombre de operacion sea en minuscula
+        $operacion = strtolower($operacion); 
+
         if (!in_array($operacion, ['suma', 'resta', 'multiplicacion'])) {
             return false;
         }
@@ -151,6 +178,30 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
         // Llamamos a la función correspondiente usando la variable
         return $funcion($num1, $num2);
     }
+
+
+
+    // Ejercicio 6
+
+    function Afuncion(){
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Ejercicio6
 

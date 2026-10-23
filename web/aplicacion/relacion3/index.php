@@ -28,22 +28,22 @@ $barraUbi = [
 $vector = array(); // el vecto vacio
 $numero = 0;
 $result = "";
-$valor = 7;
-$devuelve = 0;
+$num1 = 7;
+
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion 3 ", $barraUbi);
-cuerpo($vector, $numero, $result,$valor,$devuelve); //llamo a la vista
+cuerpo($vector, $numero, $result,$num1); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
 //vista
 function cabecera() {}
 //vista
-function cuerpo($vector, $numero, $result,$valor,$devuelve)
+function cuerpo($vector, $numero, $result,$num1)
 {
     echo "<h1>Funciones</h1>";
 
@@ -74,15 +74,20 @@ function cuerpo($vector, $numero, $result,$valor,$devuelve)
 
     echo "<hr>";
     echo "<h2>Ejercicio 4</h2>";
-    $devuelve = devuelve($valor,4,2);
-    echo "Valor introducciendo los 3 num (\$valor,4,2): ".$devuelve."<br>";
-    $devuelve = devuelve($valor);
-    echo "Valor introducciendo solo el primer parametro (\$valor): ".$devuelve."<br>";
-    $devuelve = devuelve($valor,3);
-    echo "Valor introducciendo el primer y el segundo numero (\$valor,3): ".$devuelve."<br>";
-    $devuelve = devuelve(num: $valor,num3: 6);
-    echo "Valor introduciendo el primero y el tercero numero (num:\$valor,num3: 6): ".$devuelve;
+
+    echo "Valor introducciendo los 3 num (\$valor,4): ".devuelve($num1,4)."<br>";
+    echo "Valor introducciendo solo el primer parametro (\$valor): ".devuelve($num1)."<br>";
+    echo "Valor introducciendo el primer y el segundo numero (\$valor,3): ".devuelve($num1,3)."<br>";
+    echo "Valor introduciendo el primero y el tercero numero (num: \$valor,num3: 6): ".devuelve(num: $num1,num3: 6);
 
     echo "<hr>";
     echo "<h2>Ejercicio 5</h2>";
+    
+    echo "Resultado de la Suma (12 + 5): ".hacerOperacion("suma",12,5)."<br>";
+    echo "Resultado de la Resta (12 - 5): ".hacerOperacion("resta",12,5)."<br>";
+    echo "Resultado de la Multiplicacion (12 * 5): ".hacerOperacion("multiplicacion",12,5);
+
+    echo "<hr>";
+    echo "<h2>Ejercicio 6</h2>";
+    
 }
