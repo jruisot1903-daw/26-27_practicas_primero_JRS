@@ -179,31 +179,16 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
         return $funcion($num1, $num2);
     }
 
-
-
-    // Ejercicio 6
-
-    function Afuncion(){
-        
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Ejercicio6
+    /**
+     * llamadaAFuncion es una función que nos permite pasarle 2 numeros y una funcion anonima la cual nos permite hacer
+     * la operacion que queramos con los dos numeros.
+     *
+     * @param integer $a
+     * @param integer $b
+     * @param callable $callback
+     * @return integer
+     */
 
     function llamadaAFuncion(int $a, int $b, callable $callback): int
     {
@@ -211,6 +196,14 @@ function cuentaVeces(&$array, $calve, $valor, &$num2)
     }
 
     //Ejercicio7
+    /**
+     * ordenar es una función que nos permite pasarle un array de cadenas y nos ordena el array de mayor a menor
+     * segun la longitud de las cadenas.
+     *
+     * @param array $vector
+     * @return void
+     */
+    
     function ordenar(array &$vector): void
     {
         // Ordenamos el array usando una función anónima como callback

@@ -29,21 +29,21 @@ $vector = array(); // el vecto vacio
 $numero = 0;
 $result = "";
 $num1 = 7;
-
+$vector2 = array("uno", "grande", "caminos", "a");
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion 3 ", $barraUbi);
-cuerpo($vector, $numero, $result,$num1); //llamo a la vista
+cuerpo($vector, $numero, $result,$num1,$vector2); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
 //vista
 function cabecera() {}
 //vista
-function cuerpo($vector, $numero, $result,$num1)
+function cuerpo($vector, $numero, $result,$num1,$vector2)
 {
     echo "<h1>Funciones</h1>";
 
@@ -90,4 +90,18 @@ function cuerpo($vector, $numero, $result,$num1)
     echo "<hr>";
     echo "<h2>Ejercicio 6</h2>";
     
+    echo "Resultado primera llamada: ".llamadaAFuncion(10, 20, fn($a, $b)=> $a + $b)."<br>";
+    echo "Resultado segunda llamada: ".llamadaAFuncion(10,20,fn($a,$b)=> $a - $b)."<br>";
+    echo "Resultado tercera llamada: ".llamadaAFuncion(10,20,fn($a,$b)=> $a * $b);
+
+    echo "<hr>";
+    echo "<h2>Ejercicio 7</h2>";
+
+    $vector2=array("uno", "grande", "caminos", "a");
+    ordenar($vector2);
+
+    echo "Vector ordenado: ";
+    foreach ($vector2 as $cadena) {
+        echo $cadena . " ";
+    }
 }
