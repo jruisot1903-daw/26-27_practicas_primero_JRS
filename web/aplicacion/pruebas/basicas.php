@@ -1,35 +1,31 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-/**
- * Cada elemento es un array de dos posiciones asociativas
- * TEXTO : texto a mostrar en el elemento
- * LINK: Enlace a la pagina
- */
+define("NUME",25);
+const NUME1=56;
+        
+        
+//controlador
 
-$barraUbi = [
-    [
-        "TEXTO" => "Inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas Basicas",
-        "LINK" => "/aplicacion/pruebas/basicas.php"
-    ]
+$barra=[
+     [
+       "TEXTO"=> "inicio",
+       "ENLACE" =>"/index.php",
+     ],
+       [ 
+       "TEXTO"=> "pruebas",   
+       "ENLACE" =>"/aplicacion/pruebas/index.php",
+     ], 
+       [ 
+       "TEXTO"=> "eje. basicos",   
+     ] 
 ];
 
 
-define("NUME",25);
-const NUME1=56;
-//controlador
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Pruebas Basicas", $barraUbi);
+inicioCuerpo("pruebas basicas",$barra);
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -37,12 +33,40 @@ finCuerpo();
 //vista
 function cabecera() {}
 //vista
+
+
+/**
+ * funcion que me permite mostrar la vista
+ *
+ * @return void
+ */
 function cuerpo()
 {
 ?>
-    <br><br>esto es html <br> 
-    <?php
-       echo "klñfffdj";  // esto es un comentario
+    <br><br>esto es html //esto es un comentario
+    <?php 
+        echo "klñfffdj";  // esto es un comentario
+
+        //
+        /*
+
+        */
+
+        /**
+         * 
+         */
+        
+        $cadena=date("d/m/Y H:i:s");
+
+        /**
+         * variable que representa el dia de hoy
+         */
+        $hoy= new DateTime();
+        $cadena=$hoy->format('d/m/Y H:i:s');
+
+        //le sumo 2 dias,  15 horas, 30 minutos
+        $hoy->add(new DateInterval("P2DT15H30M"));
+        $cadena=$hoy->format('d/m/Y H:i:s');
 
         $var1=25;
         $cadena='esto es una cadena';
@@ -62,7 +86,7 @@ function cuerpo()
         if (isset($cadena2))
              echo $cadena2;
 
-       
+        echo "el numero real $real";
         
         $real=1234.56789012345678901;
         $real+=  0.432109876549;
@@ -119,6 +143,7 @@ function cuerpo()
         $aux=true;
         $var="hola ".$aux;
         $aux=[];
+        $var="hola ".$aux;
         $aux="adios";
         $var="hola ".$aux;
 
@@ -190,10 +215,11 @@ function cuerpo()
                     break;
             default: $cadena="otro";
         }
-
-
-    ?>
-
-    
+                
+                 
+?>
+  
 <?php
 }
+
+
