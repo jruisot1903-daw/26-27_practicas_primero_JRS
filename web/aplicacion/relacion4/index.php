@@ -35,5 +35,5 @@ function cabecera() {}
 //vista
 function cuerpo()
 {
-
+    echo "<h1>Clases, Objetos y Enumeraciones</h1><br>";
 }
