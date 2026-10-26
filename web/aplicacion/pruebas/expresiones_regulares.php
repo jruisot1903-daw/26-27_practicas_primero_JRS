@@ -1,6 +1,19 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-
+$barraUbi = [
+    [
+        "TEXTO" => "inicio",
+        "LINK" => "/index.php"
+    ],
+    [
+        "TEXTO" => "Pruebas",
+        "LINK" => "/aplicacion/pruebas/index.php"
+    ],
+    [
+        "TEXTO" => "Exp_Regu",
+        "LINK" => "/aplicacion/pruebas/expresiones_regulares.php"
+    ]
+];
         
         
 //controlador
@@ -59,7 +72,7 @@ preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Expresiones regulares");
+inicioCuerpo("Expresiones regulares",$barraUbi);
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************

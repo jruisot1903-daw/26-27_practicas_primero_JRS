@@ -5,10 +5,11 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 $barra=[
      [
        "TEXTO"=> "inicio",
-       "ENLACE" =>"/index.php",
+       "LINK" =>"/index.php",
      ],
        [ 
-       "TEXTO"=> "pruebas"   
+       "TEXTO"=> "pruebas",
+       "LINK" => "/aplicacion/pruebas/index.php"
      ],  
 ];
 
@@ -39,5 +40,6 @@ function cuerpo()
     <a href="cadenas.php">Cadenas</a><br>
     <a href="expresiones_regulares.php">Expresiones regulares</a><br>
     <a href="index_funciones.php">funciones</a><br>
+    <a href="clases.php">clases</a>
 <?php
 }
