@@ -44,3 +44,11 @@ function suma(float $a, float $b, float ...$resto): float
         $res += $num;
     return $res;
 }
+
+function suma1(float $a, float $b, float ...$resto): float
+{
+    $res=0;
+    for ($i=0; $i<func_num_args();$i++)
+        $res += func_get_arg($i);
+    return $res;
+}
