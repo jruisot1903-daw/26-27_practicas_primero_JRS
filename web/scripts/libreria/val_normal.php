@@ -189,8 +189,22 @@ function validaExpresion(string &$var, string $expresion, string $defecto):bool{
  * La funcion devuelve true si dentro del array esta el dato a comprobar , por el contrario devuelve false.
  *
  */
-function validaRango(mixed $var, array $posibles, int $tipo=1):bool{
-    $resultado = false;
+function validaRango(mixed $var, array $posibles, int $tipo = 1): bool {
+    if ($tipo === 1) {
+        // Compara con los valores del array
+        foreach ($posibles as $valor) {
+            if ($valor === $var) {
+                return true;
+            }
+        }
+    } elseif ($tipo === 2) {
+        // Compara con las claves del array
+        foreach (array_keys($posibles) as $clave) {
+            if ($clave === $var) {
+                return true;
+            }
+        }
+    }
 
-    return $resultado;
+    return false;
 }
