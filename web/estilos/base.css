@@ -375,20 +375,139 @@ a:visited{
   box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
 }
 
+/* --- MENSAJES DE ERROR --- */
 .error {
-  font-family: 'BO2', Impact, 'Arial Black', sans-serif;
-  font-size: 0.85em;
-  background-color: rgba(220, 38, 38, 0.15);
-  color: #ef4444; 
-  border: 2px solid #ef4444;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 0px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+
+    color: #ff5555;
+    background-color: rgba(255, 40, 40, 0.12);
+
+    border-left: 3px solid #ff3333;
+    padding: 5px 10px;
+    margin: 5px 0 12px 0;
+
+    text-transform: none;
+    letter-spacing: normal;
+    overflow-wrap: anywhere;
+
+    text-shadow: 0 0 5px rgba(255, 50, 50, 0.4);
+    box-shadow: 0 0 8px rgba(255, 40, 40, 0.15);
 }
 
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+.formulario {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 0;
+}
+
+.formulario form {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Campos de texto y números */
+.formulario input[type="text"],
+.formulario input[type="password"],
+.formulario input[type="number"] {
+    max-width: 100%;
+    padding: 5px;
+    margin: 4px 0;
+
+    background-color: #ffffff;
+    color: #111111;
+
+    border: 1px solid #777777;
+    border-radius: 2px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Anchura de los campos principales */
+.formulario input[type="text"],
+.formulario input[type="password"] {
+    width: 180px;
+}
+
+/* Campos de fecha del carnet */
+.formulario input[name="dia_carnet"],
+.formulario input[name="mes_carnet"] {
+    width: 65px;
+}
+
+.formulario input[name="ano_carnet"] {
+    width: 85px;
+}
+
+/* Campos numéricos */
+.formulario input[name="hermanos"] {
+    width: 70px;
+}
+
+.formulario input[name="sueldo"] {
+    width: 115px;
+}
+
+/* Radio buttons y checkboxes */
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+    accent-color: #ff5500;
+    margin-right: 7px;
+}
+
+/* Etiquetas */
+.formulario label {
+    color: #ff5500;
+}
+
+/* Botón de enviar */
+.formulario input[type="submit"] {
+    background-color: #1f2326;
+    color: #ff5500;
+    border: 1px solid #ff5500;
+
+    padding: 8px 18px;
+    margin-top: 10px;
+
+    font-family: 'BO2', Impact, Arial, sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #ff5500;
+    color: #000000;
+    box-shadow: 0 0 12px rgba(255, 85, 0, 0.6);
+}
+
+
+/* --- MENSAJES DE ERROR DEL FORMULARIO --- */
+.error-campo {
+    display: inline-block;
+    color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.12);
+    border-left: 3px solid #ff4d4d;
+    padding: 3px 8px;
+    margin: 3px 5px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.35em;
+    font-weight: bold;
+    text-transform: none;
+    letter-spacing: normal;
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.4);
+}
 
 /* --- KILLFEED INYECTADA POR CSS PURO (SIN TOCAR HTML) --- */
 
