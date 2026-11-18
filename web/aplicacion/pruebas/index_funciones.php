@@ -19,8 +19,7 @@ $barra=[
        "LINK" =>"/aplicacion/pruebas/index.php",
      ], 
        [ 
-       "TEXTO"=> "eje. funciones",
-       "LINK" => "/aplicacion/pruebas/index_funciones.php"
+       "TEXTO"=> "eje. funciones",   
      ] 
 ];
 

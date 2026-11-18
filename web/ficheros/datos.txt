@@ -1,0 +1,2 @@
+nombre,vicente,16,
+nom1,ordenador,1134,12,

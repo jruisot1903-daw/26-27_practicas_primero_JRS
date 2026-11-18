@@ -16,7 +16,6 @@ $barra = [
     ],
     [
         "TEXTO" => "eje. formulario",
-        "LINK" => ""
     ]
 ];
 
@@ -51,7 +50,7 @@ $datos = [
 $errores = [];
 
 
-if (isset($_POST["crear"])) 
+if (isset($_POST["cr"])) 
     {
         //verifico nombre
         $nombre = "";
@@ -72,8 +71,8 @@ if (isset($_POST["crear"]))
         }
         if ($precio <= 0)
             {
-            $errores["precio"][] = "Debe indicarse un precio";
-            $precio=10;
+                $errores["precio"][] = "Debe indicarse un precio";
+                $precio=10;
             }
         $datos["precio"] = $precio;
 
@@ -119,18 +118,49 @@ function formulario(array $datos, array $errores)
             foreach ($valor as $error)
                 echo "$clave => $error<br>" . PHP_EOL;
         }
-        echo "</div>";
+        echo "</div><br><br>";
     }
 ?>
     <form action="" method="post">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre"
             value="<?= $datos["nombre"]; ?>" size=21
-            maxlength="20"><br>
+            maxlength="30"><br>
+        <?php
+             if (isset($errores["nombre"]))
+                {
+                    echo "<div class='error'>";
+                    foreach ($errores["nombre"] as $error)
+                        {
+                            echo "$error<br>".PHP_EOL;
+                        }
+                    echo "</div>";
+                }?>
         <label for="precio">Precio: </label>
         <input type="text" name="precio" id="precio"
             value="<?php echo $datos["precio"]; ?>" size=4
             maxlength="3"><br>
+        <?php
+             if (isset($errores["precio"]))
+                {
+                    echo "<div class='error'>";
+                    foreach ($errores["precio"] as $error)
+                        {
+                            echo "$error<br>".PHP_EOL;
+                        }
+                    echo "</div>";
+                }?>
+
+        Elige estas opciones:<br />
+        <input type="checkbox" name="opciones[0]" value="menor" />
+        Menor de edad <br />
+        <input type="checkbox" name="opciones[10]" value="minusvalia" />
+        Minusvalía<br />
+        <input type="checkbox" name="opciones[20]" value="numerosa" />
+        Familia numerosa <br />
+        <input type="checkbox" name="opciones[30]" value="minima" />
+        Renta mínima<br />
+
         <input type="submit" class="boton" value="Crear" name="cr">
     </form>
 <?php

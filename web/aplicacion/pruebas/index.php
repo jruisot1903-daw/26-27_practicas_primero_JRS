@@ -8,8 +8,7 @@ $barra=[
        "LINK" =>"/index.php",
      ],
        [ 
-       "TEXTO"=> "pruebas",
-       "LINK" => "/aplicacion/pruebas/index.php"
+       "TEXTO"=> "pruebas"   
      ],  
 ];
 
@@ -41,6 +40,8 @@ function cuerpo()
     <a href="expresiones_regulares.php">Expresiones regulares</a><br>
     <a href="index_funciones.php">funciones</a><br>
     <a href="clases.php">clases</a><br>
-    <a href="pagformulario.php">PagFormulario</a>
+    <a href="pagformulario.php">ejemplo de formulario</a><br>
+    <a href="cargapagina.php">ejemplo de como cargar otra página</a><br>
+    <a href="pruebaficheros.php">PruebaFicheros</a>
 <?php
 }

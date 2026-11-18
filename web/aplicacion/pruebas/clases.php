@@ -1,6 +1,5 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-
 //controlador
 
 $barra=[
@@ -13,8 +12,7 @@ $barra=[
        "LINK" =>"/aplicacion/pruebas/index.php",
      ], 
        [ 
-       "TEXTO"=> "clases" ,
-       "LINK" => "/aplicacion/pruebas/clases.php"
+       "TEXTO"=> "clases"  
      ] 
 ];
 
@@ -41,13 +39,67 @@ $datosJSon=json_encode($datos);
 $p1 = Prueba::desdeDatos(5, 'Objeto');
 $p2 = Prueba::desdeJson($datosJSon);
 
-$programa = Unica::crear(100);
 
-$programa -> num = 1;
+$programa=Unica::crear(100);
 
-$segunda = Unica::crear(300);
+$programa->numero=1;
 
-$ins = new Instituto();
+$segunda=Unica::crear(300);
+
+
+
+$ins=new Instituto();
+
+
+//sobrecarga
+
+$clase1=new Clasenormal();
+$clase2=new Clasenormal();
+
+$clase1->cadena="hola mundo";
+
+$cad="";
+if (isset($clase1->cadena))
+    $cad=$clase1->cadena;
+
+if (isset($clase2->cadena))
+    $cad=$clase2->cadena;
+//
+//clase sin sobrecarga
+$clase1=new ClaseSinsobrecarga();
+
+$clase1->numero=100;
+//$clase1->cadena="adios";
+//$cad=$clase1->cadena;
+if (isset($clase1->cadena))
+    $cad=$clase1->cadena;
+
+//clase sobrecargada
+$clase1=new ClaseSobrecargada();
+
+$val=$clase1->moreno;
+$val=$clase1->marcha;
+$val=$clase1->numero;
+//$val=$clase1->hora; error
+
+$clase1->marcha=$val;
+$clase1->numero=$val+10;
+//$clase1->hora=$val;
+
+//uso clase dinamica que guarda las nueva propiedades en un array privado
+$clase1=new ClaseDinamica();
+$clase2=new ClaseDinamica();
+
+$clase1->nombre="vicente";
+
+$cadena=$clase1->nombre;
+
+$clase1->varPublica=20;
+if (isset($clase2->nombre))
+        $cadena=$clase2->nombre;
+
+unset($clase1->nombre);
+
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
@@ -63,12 +115,15 @@ function cabecera() {}
 //vista
 function cuerpo()
 {
-    
+?>
+ 
+<?php
 }
 
 /**
- * Clases de prueba en la que se comprueba las clases  metodos
+ * Clase de prueba en la que se comprueban las propiedades y metodos
  */
+#[\AllowDynamicProperties]  //para evitar warning de deprecated
 class ClasePrueba
 {
     //definición de constantes
@@ -101,8 +156,7 @@ class Prueba
     private ?int $_codigo;
     private ?string $_nombre;
     //el constructor es privado
-    private function __construct(?int $codigo = null, ?string $nombre =
-    null)
+    private function __construct(?int $codigo = null, ?string $nombre = null)
     {
         $this->_codigo = $codigo;
         $this->_nombre = $nombre;
@@ -125,28 +179,27 @@ class Prueba
 }
 
 class Unica{
-    private static bool $_creada = false;
-    public int $num = 12;
-    
-    private static ?Unica $_obj = null;
+    private static bool $_creada=false;
+    public int $numero=12;
 
-    private function __construct(int $val = 0)
+    private static ?Unica $_objeto=null;
+
+    private function __construct(int $val=0)
     {
-        $this->num = 12;
+        $this->numero=$val;
     }
+    
 
-    public static function crear(int $num):static
-    {   
+    public static function crear(int $numero ):static
+    {
 
-        if(self::$_creada)
-            return self::$_obj;
-        
-        $objeto = new static($num);
-        
-        self::$_obj = $objeto;
-        self::$_creada = true;
+        if (self::$_creada)
+            return self::$_objeto;
 
-        return self::$_obj;
+        $obj=new static($numero);
+        self::$_objeto=$obj;
+        self::$_creada=true;
+
+        return self::$_objeto;
     }
-
 }
