@@ -38,6 +38,18 @@ $datos = [
 */
 $errores=[];
 
+if (isset($_POST["descargar"]))
+    {
+        $nombreSalida="datossssss.pdf";
+        header('Content-Type:'.'application/pdf');
+        header('Content-Disposition:attachment;filename="'.$nombreSalida.'"');
+        $ruta = RUTABASE . "/ficheros/ej2.pdf";
+        echo file_get_contents($ruta);
+        //echo "esto es lo que va en la respuesta".PHP_EOL;
+        //echo "y por tanto en el fichero";
+        exit;
+    }
+
 if (isset($_POST["subida"]))
     {
         //recojo el nombre
@@ -117,7 +129,7 @@ function cabecera()
 //vista
 function cuerpo(array $errores)
 {
-       // echo mostrarErrores($errores);
+        echo mostrarErrores($errores);
 ?>
     <br><br>
     <form enctype="multipart/form-data" action="" method="POST">
