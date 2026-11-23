@@ -26,11 +26,6 @@ class Punto
         if (!$this->setX($x) || !$this->setY($y) || !$this->setColor($color) || !$this->setGrosor($grosor)) {
             throw new Exception("Valores inválidos al crear el punto.");
         }
-
-        $this->setX($x);
-        $this->setY($y);
-        $this->setColor($color);
-        $this->setGrosor($grosor);
     }
 
     public function setX(int $x): bool
@@ -78,4 +73,10 @@ class Punto
 {
     return "{$this->x} ; {$this->y} ; {$this->color} ; {$this->grosor}";
 }
+
+public function __set($nombre, $valor): void
+{
+    throw new Exception("No se pueden crear propiedades dinámicas.");
+}
+
 }
