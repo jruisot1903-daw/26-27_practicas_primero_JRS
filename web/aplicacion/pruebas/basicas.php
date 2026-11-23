@@ -6,20 +6,18 @@ const NUME1=56;
         
 //controlador
 
-$barraUbi = [
-    [
-        "TEXTO" => "inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ],
-    [
-        "TEXTO"=> "Basicas",
-        "LINK" => "/aplicacion/pruebas/basicas.php"
-    ]
-
+$barra=[
+     [
+       "TEXTO"=> "inicio",
+       "LINK" =>"/index.php",
+     ],
+       [ 
+       "TEXTO"=> "pruebas",   
+       "LINK" =>"/aplicacion/pruebas/index.php",
+     ], 
+       [ 
+       "TEXTO"=> "eje. basicos",   
+     ] 
 ];
 
 
@@ -27,7 +25,7 @@ $barraUbi = [
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("pruebas basicas",$barraUbi);
+inicioCuerpo("pruebas basicas",$barra);
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -47,8 +45,6 @@ function cuerpo()
 ?>
     <br><br>esto es html //esto es un comentario
     <?php 
-
-        $real = 10;
         echo "klñfffdj";  // esto es un comentario
 
         //

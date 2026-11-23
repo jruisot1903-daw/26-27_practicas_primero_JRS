@@ -1,21 +1,5 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-$barraUbi = [
-    [
-        "TEXTO" => "inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ],
-    [
-        "TEXTO" => "Array",
-        "LINK" =>  "/aplicacion/pruebas/array.php"
-    ]
-];
-
-
 define("NUME",25);
 const NUME1=56;
         
@@ -25,7 +9,7 @@ const NUME1=56;
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("ARRAY",$barraUbi);
+inicioCuerpo("ARRAY");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************

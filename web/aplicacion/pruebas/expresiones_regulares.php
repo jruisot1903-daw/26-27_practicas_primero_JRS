@@ -1,19 +1,6 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-$barraUbi = [
-    [
-        "TEXTO" => "inicio",
-        "LINK" => "/index.php"
-    ],
-    [
-        "TEXTO" => "Pruebas",
-        "LINK" => "/aplicacion/pruebas/index.php"
-    ],
-    [
-        "TEXTO" => "Exp_Regu",
-        "LINK" => "/aplicacion/pruebas/expresiones_regulares.php"
-    ]
-];
+
         
         
 //controlador
@@ -68,11 +55,44 @@ $cadena="/* primer comentario */ no comentado /* segundo comentario */";
 $exp="#/\*.*?\*/#";
 preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
 
+//busqueda
+$exp="/\w+(?=;)/";
+$cadena=" primera ; segunda tercera; cuarta ; quinta";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/\w+(?=.*;)/";
+$cadena=" primera ; segunda tercera; cuarta ; quinta";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&\-_+])[A-Za-z\d$@!%*?&\-_+]{8,15}$/";
+$cadena="AAAAAbbbb11";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&\-_+])[A-Za-z\d$@!%*?&\-_+]{8,15}$/";
+$cadena="AAAbbbb11%?";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&\-_+])[A-Za-z\d$@!%*?&\-_+]{8,15}$/";
+$cadena="1A?A3Ab11%?";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&\-_+])[A-Za-z\d$@!%*?&\-_+]{8,15}$/";
+$cadena="1A?A3Ab11%? ";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/(?<=.*;)\w+/";
+$cadena="; primero ; ";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
+$exp="/(?<=;\s)\w+/";
+$cadena=";otro ; primero ; ";
+preg_match($exp,$cadena,$resultado,PREG_OFFSET_CAPTURE);
+
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Expresiones regulares",$barraUbi);
+inicioCuerpo("Expresiones regulares");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
